@@ -12,15 +12,3 @@ Main Operation SQLite
     metanit.Click Btn Python
     metanit.Click Btn DB Python
     metanit.Click Btn Main SQLite
- 
-
-
-
-
-
-
-
-
-
-
-
