@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-06T16:43:36.168587" rpa="false" schemaversion="5">
+<suite id="s1" name="webRobot" source="D:\VSC\webRobot">
+<suite id="s1-s1" name="Tests" source="D:\VSC\webRobot\tests">
+<suite id="s1-s1-s1" name="Metanit.Run" source="D:\VSC\webRobot\tests\metanit.run">
+<suite id="s1-s1-s1-s1" name="Metanit Page Sqlite" source="D:\VSC\webRobot\tests\metanit.run\metanit page sqlite.robot">
+<test id="s1-s1-s1-s1-t1" name="Main Operation SQLite" line="9">
+<kw name="Precondition: Open Browser And Maximize" owner="web" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-06T16:43:36.495404" level="INFO">Opening browser 'chrome' to base url 'https://metanit.com/'.</msg>
+<arg>url=${site_url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-06T16:43:36.494400" elapsed="3.414142"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-06T16:43:39.908542" elapsed="0.053451"/>
+</kw>
+<arg>site_url=https://metanit.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Предусловие: открыть браузер на весь экран</doc>
+<status status="PASS" start="2024-05-06T16:43:36.493403" elapsed="3.468590"/>
+</kw>
+<kw name="Click Btn Python" owner="metanit">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>locator=${TO_PAGE_PYTHON_BTN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-06T16:43:39.962991" elapsed="0.028477"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T16:43:39.994464" level="INFO">Clicking element '(//*[@href="//metanit.com/python/"])[1]'.</msg>
+<arg>locator=${TO_PAGE_PYTHON_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T16:43:39.991468" elapsed="0.459520"/>
+</kw>
+<doc>Кликаем на кнопку Python</doc>
+<status status="PASS" start="2024-05-06T16:43:39.962991" elapsed="0.489997"/>
+</kw>
+<kw name="Click Btn DB Python" owner="metanit">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>locator=${TO_SCROLL_PAGE_DATA_SQL}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-06T16:43:40.458980" elapsed="0.316679"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>locator=${TO_PAGE_DB_BTN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-05-06T16:43:40.775659" elapsed="0.040956"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T16:43:40.817613" level="INFO">Clicking element '//a[text()="базами данных в Python"]'.</msg>
+<arg>locator=${TO_PAGE_DB_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T16:43:40.816615" elapsed="0.284687"/>
+</kw>
+<doc>Скролим вниз и Кликаем на кнопку база данных Python</doc>
+<status status="PASS" start="2024-05-06T16:43:40.457980" elapsed="0.643322"/>
+</kw>
+<kw name="Click Btn Main SQLite" owner="metanit">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${TO_PAGE_DATA_SQL_BTN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-06T16:43:41.103300" elapsed="0.040954"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-06T16:43:41.147252" level="INFO">Clicking element '(//a[text()="Основные операции с данными в SQLite"])[1]'.</msg>
+<arg>locator=${TO_PAGE_DATA_SQL_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-06T16:43:41.145253" elapsed="0.325642"/>
+</kw>
+<doc>Кликаем на кнопку основные операции SQLite</doc>
+<status status="PASS" start="2024-05-06T16:43:41.102300" elapsed="0.368595"/>
+</kw>
+<kw name="Postcondition: Close Browser" owner="web" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-06T16:43:44.479918" level="INFO">Slept 3 seconds.</msg>
+<arg>time_=3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-06T16:43:41.477888" elapsed="3.002030"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-06T16:43:44.479918" elapsed="2.320221"/>
+</kw>
+<doc>Закрыть браузер</doc>
+<status status="PASS" start="2024-05-06T16:43:41.476889" elapsed="5.323250"/>
+</kw>
+<doc>Перейти на страницу с основными операциями с SQLite</doc>
+<timeout value="1 minute"/>
+<status status="PASS" start="2024-05-06T16:43:36.491413" elapsed="10.309724"/>
+</test>
+<status status="PASS" start="2024-05-06T16:43:36.211733" elapsed="10.591397"/>
+</suite>
+<status status="PASS" start="2024-05-06T16:43:36.205739" elapsed="10.599390"/>
+</suite>
+<status status="PASS" start="2024-05-06T16:43:36.202757" elapsed="10.605368"/>
+</suite>
+<status status="PASS" start="2024-05-06T16:43:36.173582" elapsed="10.636540"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="webRobot">webRobot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">webRobot.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Metanit.Run">webRobot.Tests.Metanit.Run</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Metanit Page Sqlite">webRobot.Tests.Metanit.Run.Metanit Page Sqlite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
