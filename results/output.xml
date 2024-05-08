@@ -1,101 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-06T17:10:14.338078" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-05-08T00:19:56.800456" rpa="false" schemaversion="5">
 <suite id="s1" name="webRobot" source="D:\VSC\webRobot">
 <suite id="s1-s1" name="Tests" source="D:\VSC\webRobot\tests">
-<suite id="s1-s1-s1" name="Sobasednik.Run" source="D:\VSC\webRobot\tests\sobasednik.run">
-<suite id="s1-s1-s1-s1" name="Sobasednik" source="D:\VSC\webRobot\tests\sobasednik.run\sobasednik.robot">
-<test id="s1-s1-s1-s1-t1" name="Sobasednik click store" line="10">
+<suite id="s1-s1-s1" name="Vkontakte.Run" source="D:\VSC\webRobot\tests\vkontakte.run">
+<suite id="s1-s1-s1-s1" name="standart  LOGIN" source="D:\VSC\webRobot\tests\vkontakte.run\standart _LOGIN.robot">
+<test id="s1-s1-s1-s1-t1" name="Standart Login Vkontakte" line="14">
 <kw name="Precondition: Open Browser And Maximize" owner="web" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-06T17:10:14.631688" level="INFO">Opening browser 'chrome' to base url 'https://guru.qahacking.ru/'.</msg>
+<msg time="2024-05-08T00:19:57.124099" level="INFO">Opening browser 'chrome' to base url 'https://vk.com/'.</msg>
 <arg>url=${site_url}</arg>
 <arg>browser=${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-06T17:10:14.629690" elapsed="6.036497"/>
+<status status="PASS" start="2024-05-08T00:19:57.123100" elapsed="5.896700"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-06T17:10:20.666187" elapsed="0.081911"/>
+<status status="PASS" start="2024-05-08T00:20:03.020799" elapsed="0.725204"/>
 </kw>
-<arg>site_url=https://guru.qahacking.ru/</arg>
+<arg>site_url=https://vk.com/</arg>
 <arg>browser=chrome</arg>
 <doc>Предусловие: открыть браузер на весь экран</doc>
-<status status="PASS" start="2024-05-06T17:10:14.628690" elapsed="6.119408"/>
+<status status="PASS" start="2024-05-08T00:19:57.122102" elapsed="6.624900"/>
 </kw>
-<kw name="Click Btn Blog" owner="sobasednik">
+<kw name="Input Login" owner="vkontakte">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T00:20:03.749998" level="INFO">Typing text '79631175953 ' into text field '//input[@name="login"]'.</msg>
+<arg>locator=//input[@name="login"]</arg>
+<arg>text=%{LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T00:20:03.749000" elapsed="0.394566"/>
+</kw>
+<status status="PASS" start="2024-05-08T00:20:03.748000" elapsed="0.395566"/>
+</kw>
+<kw name="Click Btn OK Login" owner="vkontakte">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T00:20:04.146562" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>locator=//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T00:20:04.145564" elapsed="0.096894"/>
+</kw>
+<status status="PASS" start="2024-05-08T00:20:04.144565" elapsed="0.097893"/>
+</kw>
+<kw name="Click Btn Others" owner="vkontakte">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>locator=${TO_BLOG_LANDING_BTN}</arg>
+<msg time="2024-05-08T00:20:14.442588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-08T00:20:14.443586" level="FAIL">Element '//div[@class="vkc__AuthRoot__wrapper"]' not visible after 10 seconds.</msg>
+<arg>locator=//div[@class="vkc__AuthRoot__wrapper"]</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-06T17:10:20.751346" elapsed="0.052690"/>
+<status status="FAIL" start="2024-05-08T00:20:04.245455" elapsed="10.201129">Element '//div[@class="vkc__AuthRoot__wrapper"]' not visible after 10 seconds.</status>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-05-06T17:10:20.807033" level="INFO">Clicking element '(//a[text()="Блог Джесси"])[2]'.</msg>
-<arg>locator=${TO_BLOG_LANDING_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-06T17:10:20.804036" elapsed="1.078224"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>locator=//button[@data-test-id="other-verification-methods"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-08T00:20:14.447583" elapsed="0.000000"/>
 </kw>
-<doc>Нажимаем кнопку "Блог Джесси"</doc>
-<status status="PASS" start="2024-05-06T17:10:20.750096" elapsed="1.132164"/>
+<status status="FAIL" start="2024-05-08T00:20:04.244455" elapsed="10.203128">Element '//div[@class="vkc__AuthRoot__wrapper"]' not visible after 10 seconds.</status>
 </kw>
-<kw name="Click Btn Continue Reading" owner="sobasednik">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>locator=${TO_BLOG_SECOND_PAGE_BTN}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-06T17:10:21.886256" elapsed="0.047947"/>
+<kw name="Input Password" owner="vkontakte">
+<status status="NOT RUN" start="2024-05-08T00:20:14.449580" elapsed="0.000999"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-05-06T17:10:21.935202" level="INFO">Clicking element '(//*[@class="el-link uk-button uk-button-text"])[5]'.</msg>
-<arg>locator=${TO_BLOG_SECOND_PAGE_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-06T17:10:21.934203" elapsed="1.395630"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${WAIT_ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-06T17:10:23.329833" elapsed="0.070922"/>
-</kw>
-<doc>Нажимаем кнопку "Continue reading"</doc>
-<status status="PASS" start="2024-05-06T17:10:21.886256" elapsed="1.514499"/>
+<kw name="Click Btn OK Password" owner="vkontakte">
+<status status="NOT RUN" start="2024-05-08T00:20:14.451578" elapsed="0.000000"/>
 </kw>
 <kw name="Postcondition: Close Browser" owner="web" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-05-06T17:10:26.404107" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-05-08T00:20:17.456684" level="INFO">Slept 3 seconds.</msg>
 <arg>time_=3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-05-06T17:10:23.403752" elapsed="3.000355"/>
+<status status="PASS" start="2024-05-08T00:20:14.456572" elapsed="3.000112"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-05-06T17:10:26.404107" elapsed="2.287217"/>
+<status status="PASS" start="2024-05-08T00:20:17.456684" elapsed="2.269735"/>
 </kw>
 <doc>Закрыть браузер</doc>
-<status status="PASS" start="2024-05-06T17:10:23.401753" elapsed="5.289571"/>
+<status status="PASS" start="2024-05-08T00:20:14.455573" elapsed="5.270846"/>
 </kw>
-<doc>Перейти на вторую страницу блога с главной страницы</doc>
+<doc>Авторизоваться на сайте вконтакте</doc>
 <timeout value="1 minute"/>
-<status status="PASS" start="2024-05-06T17:10:14.626692" elapsed="14.065634"/>
+<status status="FAIL" start="2024-05-08T00:19:57.120104" elapsed="22.607312">Element '//div[@class="vkc__AuthRoot__wrapper"]' not visible after 10 seconds.</status>
 </test>
-<status status="PASS" start="2024-05-06T17:10:14.378964" elapsed="14.316361"/>
+<status status="FAIL" start="2024-05-08T00:19:56.843409" elapsed="22.886001"/>
 </suite>
-<status status="PASS" start="2024-05-06T17:10:14.374969" elapsed="14.323351"/>
+<status status="FAIL" start="2024-05-08T00:19:56.839413" elapsed="22.892995"/>
 </suite>
-<status status="PASS" start="2024-05-06T17:10:14.371972" elapsed="14.329346"/>
+<status status="FAIL" start="2024-05-08T00:19:56.836415" elapsed="22.897995"/>
 </suite>
-<status status="PASS" start="2024-05-06T17:10:14.343073" elapsed="14.360242"/>
+<status status="FAIL" start="2024-05-08T00:19:56.805450" elapsed="22.931952"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="webRobot">webRobot</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">webRobot.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Sobasednik.Run">webRobot.Tests.Sobasednik.Run</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Sobasednik">webRobot.Tests.Sobasednik.Run.Sobasednik</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="webRobot">webRobot</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">webRobot.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Vkontakte.Run">webRobot.Tests.Vkontakte.Run</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="standart  LOGIN">webRobot.Tests.Vkontakte.Run.standart  LOGIN</stat>
 </suite>
 </statistics>
 <errors>
