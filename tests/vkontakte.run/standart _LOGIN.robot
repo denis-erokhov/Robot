@@ -17,6 +17,7 @@ Standart Login Vkontakte
     vkontakte.Input Login
     vkontakte.Click Btn OK Login
     vkontakte.Click Btn Others
+    vkontakte.Click Btn Password
     vkontakte.Input Password        
     vkontakte.Click Btn OK Password
 

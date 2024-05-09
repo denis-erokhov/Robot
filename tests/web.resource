@@ -12,5 +12,5 @@ Precondition: Open Browser And Maximize
 
 Postcondition: Close Browser
     [Documentation]    Закрыть браузер
-    Sleep    time_=3s
+    Sleep    time_=5s
     Close Browser
